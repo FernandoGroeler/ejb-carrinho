@@ -8,15 +8,31 @@ import javax.ejb.Stateless;
 @Stateless
 public class SessionBeansStateless implements ISessionBeansStatelessRemote {
 	List<Produto> carrinho = new LinkedList<>();
+	
+	private void removeEstoque(int id) {
+		Produto prod = getProduto(id);
+		double estoque = prod.getEstoque();
+		
+		prod.setEstoque(estoque - 1);
+	}
+	
+	private void addEstoque(int id) {
+		Produto prod = getProduto(id);
+		double estoque = prod.getEstoque();
+		
+		prod.setEstoque(estoque + 1);
+	}
 
 	@Override
 	public void addProduto(Produto produto) {
 		carrinho.add(produto);
+		removeEstoque(produto.getId());
 	}
 
 	@Override
 	public void removeProduto(Produto produto) {
 		carrinho.remove(produto);
+		addEstoque(produto.getId());
 	}
 
 	@Override
