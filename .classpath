@@ -13,5 +13,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ejb-estoque"/>
+	<classpathentry kind="lib" path="D:/workspace/ejb-carrinho/jboss-client.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
