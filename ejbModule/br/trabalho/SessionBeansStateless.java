@@ -6,7 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 
 @Stateless
-public class SessionBeansStateless implements ISessionBeansStatelessRemote {
+public class SessionBeansStateless implements ISessionBeansStatelessRemoteCarrinho {
 	List<Produto> carrinho = new LinkedList<>();
 	
 	private void removeEstoque(int id) {
